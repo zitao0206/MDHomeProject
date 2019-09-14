@@ -1,0 +1,6 @@
+use_frameworks!
+target 'MDHomeProject_Tests' do
+  pod 'MDHomeProject', :path => '../'
+  
+  
+end
