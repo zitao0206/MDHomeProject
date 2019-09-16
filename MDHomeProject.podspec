@@ -37,7 +37,7 @@ TODO: Add long description of the pod here.
   s.source_files = 'MDHomeProject/Classes/**/*'
   
    s.resource_bundles = {
-     'MDHomeProject' => ['MDHomeProject/Assets/*.png']
+     'MDHomeProject' => ['MDHomeProject/Assets/*.*']
    }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
