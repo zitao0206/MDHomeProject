@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <XYPageMaster/XYPageMasterViewController.h>
+#import <XYPageMaster/XYPageMaster.h>
 #import "XYBaseModuleModel.h"
 @interface XYReactBasePageViewController : XYPageMasterViewController
 @property (nonatomic, strong) id model;

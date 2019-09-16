@@ -6,7 +6,7 @@
 //  Copyright © 2018年 lizitao. All rights reserved.
 //
 
-#import <XYPageMaster/XYPageMasterViewController.h>
+#import <XYPageMaster/XYPageMaster.h>
 
 @interface MDInvokerViewController : XYPageMasterViewController
 
