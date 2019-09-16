@@ -42,8 +42,8 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-   s.dependency 'AFNetworking'
-   s.dependency 'XYPageMaster','2.0.16'
+   s.dependency 'MDReactDataBoard'
+   s.dependency 'SSZipArchive'
    s.dependency 'MDCommonKit'
    s.dependency 'MDEasyCache'
    s.dependency 'MDStatePageKit'
@@ -51,6 +51,7 @@ TODO: Add long description of the pod here.
    s.dependency 'SDWebImage'
    s.dependency 'Masonry'
    s.dependency 'Aspects'
+   s.dependency 'AFNetworking'
    s.dependency 'SSZipArchive'
 
 end
