@@ -43,7 +43,7 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
    s.dependency 'AFNetworking'
-   s.dependency 'XYPageMaster'
+   s.dependency 'XYPageMaster','2.0.16'
    s.dependency 'MDCommonKit'
    s.dependency 'XYReactDataBoard'
    s.dependency 'MDEasyCache'
