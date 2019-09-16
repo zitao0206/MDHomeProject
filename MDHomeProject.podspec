@@ -48,4 +48,10 @@ TODO: Add long description of the pod here.
    s.dependency 'XYReactDataBoard'
    s.dependency 'MDEasyCache'
    s.dependency 'MDStatePageKit'
+   s.dependency 'ReactiveObjC'
+   s.dependency 'SDWebImage'
+   s.dependency 'Masonry'
+   s.dependency 'Aspects'
+   s.dependency 'SSZipArchive'
+
 end
