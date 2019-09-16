@@ -6,7 +6,7 @@
 //  Copyright © 2017年 lizitao. All rights reserved.
 //
 
-#import "XYPageMasterViewController.h"
+#import <XYPageMaster/XYPageMasterViewController.h>
 
 @interface MDMultiThreadViewController : XYPageMasterViewController
 
