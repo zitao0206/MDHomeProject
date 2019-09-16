@@ -1,5 +1,5 @@
 PODS:
-  - MDHomeProject (0.1.0)
+  - MDHomeProject (0.0.6)
 
 DEPENDENCIES:
   - MDHomeProject (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MDHomeProject: c23f50463f17af24f2156751fa2c83c98153a05b
+  MDHomeProject: 22b37752c34a3d8e0f90201b8b785931ccba2a17
 
 PODFILE CHECKSUM: 2ec4c1d6eb66f303f7aae04b85fe6b496e0786e8
 
