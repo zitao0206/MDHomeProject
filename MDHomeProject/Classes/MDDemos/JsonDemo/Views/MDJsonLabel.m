@@ -7,8 +7,7 @@
 //
 
 #import "MDJsonLabel.h"
-#import "UIColor+nvutils.h"
-#import "UIView+ResizeFrame.h"
+#import <MDCommonKit/MDCommonKit.h>
 
 @interface MDJsonLabel ()
 

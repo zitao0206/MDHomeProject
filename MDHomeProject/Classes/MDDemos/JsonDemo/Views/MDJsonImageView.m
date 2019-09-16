@@ -9,7 +9,6 @@
 #import "MDJsonImageView.h"
 #import "UIImageView+WebCache.h"
 #import <ReactiveObjC/ReactiveObjC.h>
-#import "RACEXTScope.h"
 
 @implementation MDJsonImageView
 

@@ -8,7 +8,7 @@
 
 #import "MDBaseModuleViewController.h"
 #import "MDBaseModuleView.h"
-#import "UIView+ResizeFrame.h"
+#import <MDCommonKit/UIView+ResizeFrame.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "NSArray+functional.h"
 

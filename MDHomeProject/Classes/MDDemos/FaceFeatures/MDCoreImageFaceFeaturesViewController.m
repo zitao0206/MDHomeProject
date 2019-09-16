@@ -7,7 +7,7 @@
 //
 
 #import "MDCoreImageFaceFeaturesViewController.h"
-#import "UIView+ResizeFrame.h"
+#import <MDCommonKit/UIView+ResizeFrame.h>
 
 @interface MDCoreImageFaceFeaturesViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic, strong) UIImageView *inputImageView;

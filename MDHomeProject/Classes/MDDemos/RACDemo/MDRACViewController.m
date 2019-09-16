@@ -7,16 +7,12 @@
 //
 
 #import "MDRACViewController.h"
-#import "RACDisposable.h"
-#import "RACSignal.h"
-#import "RACScheduler.h"
-#import "RACSubscriber.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "MDNavigationManager.h"
 #import "TestBlockViewController.h"
-#import "UIView+ResizeFrame.h"
+#import <MDCommonKit/MDCommonKit.h>
 #import "XYPageMaster.h"
-#import "XYReactWhiteBoard.h"
+#import "MDReactWhiteBoard.h"
 
 
 @interface MDRACViewController ()<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, UITextFieldDelegate>
@@ -62,7 +58,7 @@
 {
     [super viewDidLoad];
     
-    [[XYReactWhiteBoard shareBoard] setValue:self forKey:@"whiteKey"];
+    [[MDReactWhiteBoard shareBoard] setValue:self forKey:@"whiteKey"];
     
 //    self.title = @"VC详情页1";
 //    NSLog(@"----------->%@",self.navigationController.viewControllers);

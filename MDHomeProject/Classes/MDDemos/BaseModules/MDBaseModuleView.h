@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "MDBaseViewDelegate.h"
-#import "UIView+ResizeFrame.h"
+#import <MDCommonKit/UIView+ResizeFrame.h>
 
 @interface MDBaseModuleView : UIView
 @property (nonatomic, strong) RACSubject *heightChangeSignal;

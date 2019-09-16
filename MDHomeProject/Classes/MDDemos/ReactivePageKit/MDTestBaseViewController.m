@@ -6,11 +6,11 @@
 //
 
 #import "MDTestBaseViewController.h"
-#import "XYReactBlackBoard.h"
+#import "MDReactBlackBoard.h"
 
 @interface MDTestBaseViewController ()
 
-@property (nonatomic, strong) XYReactBlackBoard *blackBoard;
+@property (nonatomic, strong) MDReactBlackBoard *blackBoard;
 
 @end
 
@@ -47,10 +47,10 @@
     });
 }
 
-- (XYReactBlackBoard *)blackBoard
+- (MDReactBlackBoard *)blackBoard
 {
     if(nil == _blackBoard){
-        _blackBoard = [[XYReactBlackBoard alloc] init];
+        _blackBoard = [[MDReactBlackBoard alloc] init];
     }
     return _blackBoard;
 }

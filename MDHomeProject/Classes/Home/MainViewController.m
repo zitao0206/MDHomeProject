@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 #import "XYUrlAction.h"
-#import "UIView+ResizeFrame.h"
+#import <MDCommonKit/UIView+ResizeFrame.h>
 #import "MDDemoModuleViewcomtroller.h"
 #import "MDBaseModuleModel.h"
 #import "MDZipArchiveViewController.h"
@@ -16,7 +16,7 @@
 #import "MDHopeStateMachingViewController.h"
 #import "View+MASAdditions.h"
 #import "XYPageMaster.h"
-#import "XYReactWhiteBoard.h"
+#import "MDReactWhiteBoard.h"
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -59,12 +59,12 @@
     }
     [self test];
     
-    [[[XYReactWhiteBoard shareBoard] signalForKey:@"whiteKey"] subscribeNext:^(id x) {
+    [[[MDReactWhiteBoard shareBoard] signalForKey:@"whiteKey"] subscribeNext:^(id x) {
        
         NSLog(@"value is coming: %@",x);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSLog(@"remove value...");
-            [[XYReactWhiteBoard shareBoard] removeValueForKey:@"whiteKey"];
+            [[MDReactWhiteBoard shareBoard] removeValueForKey:@"whiteKey"];
          
         });
        

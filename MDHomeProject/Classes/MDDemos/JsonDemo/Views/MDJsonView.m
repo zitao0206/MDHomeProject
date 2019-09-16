@@ -10,8 +10,8 @@
 #import "MDJsonViewModel.h"
 #import "MDJsonLabelModel.h"
 #import "MDJsonLabel.h"
-#import "UIColor+nvutils.h"
-#import "UIView+ResizeFrame.h"
+#import <MDCommonKit/MDCommonKit.h>
+#import <MDCommonKit/UIView+ResizeFrame.h>
 #import "MDJsonImageView.h"
 
 @interface MDJsonView ()

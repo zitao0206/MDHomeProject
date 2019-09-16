@@ -8,7 +8,7 @@
 
 #import "MDJsonBaseModel.h"
 #import "MDJsonModel.h"
-#import "UIColor+nvutils.h"
+#import <MDCommonKit/MDCommonKit.h>
 #import "MDJsonViewModel.h"
 #import "MDJsonMappers.h"
 #import "MDJsonLabelModel.h"

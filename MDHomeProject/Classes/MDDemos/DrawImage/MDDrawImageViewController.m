@@ -7,7 +7,7 @@
 //
 
 #import "MDDrawImageViewController.h"
-#import "UIView+ResizeFrame.h"
+#import <MDCommonKit/UIView+ResizeFrame.h>
 #import <QuartzCore/QuartzCore.h>
 #import "UGCDrawTextLayer.h"
 #import "MDQuartzView.h"

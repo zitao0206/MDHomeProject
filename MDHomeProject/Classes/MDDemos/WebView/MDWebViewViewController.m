@@ -9,7 +9,7 @@
 #import "MDWebViewViewController.h"
 #import "UIView+ResizeFrame.h"
 #import <JavaScriptCore/JavaScriptCore.h>
-#import "XYReactWhiteBoard.h"
+#import <MDReactDataBoard/MDReactWhiteBoard.h>
 
 @interface MDWebViewViewController () <UIWebViewDelegate>
 

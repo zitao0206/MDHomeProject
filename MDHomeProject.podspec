@@ -45,7 +45,6 @@ TODO: Add long description of the pod here.
    s.dependency 'AFNetworking'
    s.dependency 'XYPageMaster','2.0.16'
    s.dependency 'MDCommonKit'
-   s.dependency 'XYReactDataBoard'
    s.dependency 'MDEasyCache'
    s.dependency 'MDStatePageKit'
    s.dependency 'ReactiveObjC'

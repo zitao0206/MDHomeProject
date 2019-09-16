@@ -7,7 +7,7 @@
 //
 
 #import "MDMultiThreadViewController.h"
-#import "UIColor+nvutils.h"
+#import <MDCommonKit/MDCommonKit.h>
 
 @interface MDMultiThreadViewController ()
 @property (nonatomic, strong) UIImageView *imageView;

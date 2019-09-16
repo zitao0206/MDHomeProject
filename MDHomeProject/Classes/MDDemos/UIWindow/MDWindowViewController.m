@@ -7,7 +7,7 @@
 //
 
 #import "MDWindowViewController.h"
-#import "XYReactWhiteBoard.h"
+#import "MDReactWhiteBoard.h"
 
 @interface MDWindowViewController ()
 
@@ -20,10 +20,10 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [[[XYReactWhiteBoard shareBoard] signalForKey:@"duplicate_signal_test"] subscribeNext:^(id  _Nullable x) {
+    [[[MDReactWhiteBoard shareBoard] signalForKey:@"duplicate_signal_test"] subscribeNext:^(id  _Nullable x) {
         NSLog(@"3执行了。。。。");
     }];
-    [[[XYReactWhiteBoard shareBoard] signalForKey:@"duplicate_signal_test"] subscribeNext:^(id  _Nullable x) {
+    [[[MDReactWhiteBoard shareBoard] signalForKey:@"duplicate_signal_test"] subscribeNext:^(id  _Nullable x) {
         NSLog(@"4执行了。。。。");
     }];
    
