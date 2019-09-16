@@ -6,8 +6,8 @@
 //  Copyright © 2018年 lizitao. All rights reserved.
 //
 
-#import "MDBaseZeroViewState.h"
-#import "MDBaseViewState.h"
+#import <MDStatePageKit/MDBaseZeroViewState.h>
+#import <MDStatePageKit/MDBaseViewState.h>
 
 @interface MDHopeZeroState : MDBaseViewState
 @end
