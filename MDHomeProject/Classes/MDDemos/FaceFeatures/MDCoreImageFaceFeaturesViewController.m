@@ -49,6 +49,7 @@
     self.outputImageView.width = self.view.width - 30;
     self.outputImageView.height = self.outputImageView.width * 2 / 3;
     [self.view addSubview:self.outputImageView];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 //人脸识别

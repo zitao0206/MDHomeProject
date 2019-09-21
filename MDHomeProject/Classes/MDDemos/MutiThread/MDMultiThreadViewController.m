@@ -81,6 +81,8 @@
     [self download];
     
     [self timerFire];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)timerFire

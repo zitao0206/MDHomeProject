@@ -6,10 +6,9 @@
 //  Copyright © 2017年 lizitao. All rights reserved.
 //
 
-#import "MDBaseModuleViewController.h"
+#import <MDReactPageKit/MDReactBasePageViewController.h>
 #import "MDBaseModuleModel.h"
 
-@interface MDDemoModuleViewcomtroller : MDBaseModuleViewController
+@interface MDDemoModuleViewcomtroller : MDReactBasePageViewController
 @property(nonatomic, strong) MDBaseModuleModel *model;
-
 @end

@@ -16,7 +16,7 @@
 
     
     [self.childStates enterState:NSClassFromString(@"MDHopeZeroState")];
-
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 //first test

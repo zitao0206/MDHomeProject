@@ -9,5 +9,5 @@
 #import "MDBaseModuleView.h"
 
 @interface MDDemoBottomModuleView : MDBaseModuleView
-
+@property (nonatomic, strong) UILabel *indexLabel;
 @end

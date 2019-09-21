@@ -36,7 +36,7 @@
     UIImage *image = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:@"image_from_network"];
   
     self.imageView.image = image;
-  
+  self.view.backgroundColor = [UIColor whiteColor];
 }
 
 @end

@@ -38,7 +38,7 @@
     [calculatorProxy registerSelector:@selector(sumAdd1::)];
     NSNumber *result3 = [calculatorProxy sumAdd1:add1 :add3];
     NSLog(@"result3----->%@",result3);
-    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 @end

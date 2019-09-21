@@ -20,7 +20,7 @@
 
 - (void)loadViewWithData:(id)model
 {
-    self.indexLabel.text = [[NSString alloc]initWithFormat:@"Module %ld",self.index];
+    self.indexLabel.text = [[NSString alloc]initWithFormat:@"Module %@",@(self.moduleIndex)];
     
 }
 

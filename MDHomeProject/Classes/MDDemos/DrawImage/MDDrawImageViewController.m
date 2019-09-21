@@ -53,6 +53,7 @@
 //    NSDictionary *dic = [self obtainAttributesWith:aS];
     
     [self.view addSubview:self.label];
+    self.view.backgroundColor = [UIColor whiteColor];
 
 }
 

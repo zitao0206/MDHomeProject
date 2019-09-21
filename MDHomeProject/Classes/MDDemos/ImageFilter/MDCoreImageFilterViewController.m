@@ -52,7 +52,7 @@
     self.label.textAlignment = NSTextAlignmentCenter;
     self.label.backgroundColor = self.view.backgroundColor;
     [self.view addSubview:self.label];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)change:(UISegmentedControl *)sender

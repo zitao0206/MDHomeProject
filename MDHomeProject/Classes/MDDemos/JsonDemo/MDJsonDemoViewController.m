@@ -34,7 +34,7 @@
     _jsonView = [MDJsonView new];
     _jsonView.jsonString = jsonViewString;
     [self.view addSubview:_jsonView];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)viewDidLayoutSubviews
