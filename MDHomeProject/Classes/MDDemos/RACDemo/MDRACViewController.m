@@ -11,8 +11,8 @@
 #import "MDNavigationManager.h"
 #import "TestBlockViewController.h"
 #import <MDCommonKit/MDCommonKit.h>
-#import "XYPageMaster.h"
-#import "MDReactWhiteBoard.h"
+#import <MDPageMaster/MDPageMaster.h>
+#import <ReactiveDataBoard/ReactiveDataBoard.h>
 
 
 @interface MDRACViewController ()<UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, UITextFieldDelegate>
@@ -36,7 +36,7 @@
 
 @implementation MDRACViewController
 
-- (void)handleWithURLAction:(XYUrlAction *)urlAction
+- (void)handleWithURLAction:(MDUrlAction *)urlAction
 {
     NSString *string = [urlAction stringForKey:@"url"];
     NSLog(@"1------->%@",string);
@@ -58,7 +58,7 @@
 {
     [super viewDidLoad];
     
-    [[MDReactWhiteBoard shareBoard] setValue:self forKey:@"whiteKey"];
+//    [[MDReactWhiteBoard shareBoard] setValue:self forKey:@"whiteKey"];
     
 //    self.title = @"VC详情页1";
 //    NSLog(@"----------->%@",self.navigationController.viewControllers);

@@ -12,7 +12,7 @@
 #import "UGCDrawTextLayer.h"
 #import "MDQuartzView.h"
 #import "MDDemoTopView.h"
-#import "XYPageMaster.h"
+#import <MDPageMaster/MDPageMaster.h>
 
 @interface MDDrawImageViewController ()
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -30,7 +30,7 @@
 
 @implementation MDDrawImageViewController
 
-- (void)handleWithURLAction:(XYUrlAction *)urlAction
+- (void)handleWithURLAction:(MDUrlAction *)urlAction
 {
     self.image = [urlAction anyObjectForKey:@"image"];
 }

@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import "XYUrlAction.h"
+#import <MDPageMaster/MDPageMaster.h>
 #import <EasyLayout/EasyLayout.h>
 #import "MDDemoModuleViewcomtroller.h"
 #import "MDBaseModuleModel.h"
@@ -15,8 +15,7 @@
 #import "AppDelegate.h"
 #import "MDHopeStateMachingViewController.h"
 #import "View+MASAdditions.h"
-#import "XYPageMaster.h"
-#import "MDReactWhiteBoard.h"
+#import <ReactiveDataBoard/ReactiveDataBoard.h>
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -24,7 +23,7 @@
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UILabel *label2;
 @property (nonatomic, strong) NSMutableArray <NSString *> *titleArr;
-@property (nonatomic, strong) NSMutableArray <XYUrlAction *> *actionArr;
+@property (nonatomic, strong) NSMutableArray <MDUrlAction *> *actionArr;
 
 @property (nonatomic, strong) NSMutableArray *mutableArray;
 
@@ -58,20 +57,6 @@
         [self.mutableArray addObject:[NSString stringWithFormat:@"object-%i", i]];
     }
     [self test];
-    
-    [[[MDReactWhiteBoard shareBoard] signalForKey:@"whiteKey"] subscribeNext:^(id x) {
-       
-        NSLog(@"value is coming: %@",x);
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSLog(@"remove value...");
-            [[MDReactWhiteBoard shareBoard] removeValueForKey:@"whiteKey"];
-         
-        });
-       
-        
-    }];
-    
- 
 
 }
 
@@ -117,7 +102,7 @@
     NSArray *array = @[
                        @"AFNetworking",                     //23
                        @"WebView",                          //22
-                       @"XYFelix",                          //21
+                       @"MDFelix",                          //21
                        @"CATransition",                     //20
                        @"window",                           //19
                        @"SDWebImage",                       //18
@@ -147,122 +132,122 @@
 {
     self.actionArr = [NSMutableArray new];
     {//23
-          XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://afn"]];
+          MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://afn"]];
           [self.actionArr addObject:action];
     }
     {//22
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://webview"]];
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://webview"]];
         [self.actionArr addObject:action];
     }
     {//21
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://hotfix"]];
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://hotfix"]];
         [self.actionArr addObject:action];
     }
     {//20
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://transition"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://transition"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//19
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://window"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://window"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//18
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://SDWebImage"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://SDWebImage"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//17
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://stateMaching"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://stateMaching"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//16
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://zipArchive"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://zipArchive"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//15
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://jspatch"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://jspatch"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//14
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://cache"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://cache"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//13
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://reactivePage_3"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://reactivePage_3"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//12
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://reactivePage_2"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://reactivePage_2"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//11
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://reactivePage"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://reactivePage"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//10
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://invoker"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://invoker"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//9
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdruntime2"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdruntime2"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//8
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdruntime1"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdruntime1"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     
     {//7
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdfilter"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdfilter"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//6
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdfacefeatures"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdfacefeatures"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//5
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdquartzdraw"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdquartzdraw"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//4
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdmultithread"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdmultithread"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//3
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdjson"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdjson"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//2
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mddrawimage"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mddrawimage"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//1
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdbasemodule"]];
-        action.animation = XYNaviAnimationPush;
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://mdbasemodule"]];
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
     {//0
-        XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://rac"]];
+        MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://rac"]];
         [action setString:@"http://www.baidu.com" forKey:@"url"];
-        action.animation = XYNaviAnimationPush;
+        action.animation = MDNaviAnimationPush;
         [self.actionArr addObject:action];
     }
 }
@@ -310,9 +295,9 @@
 //        }];
 //        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"xiaoying://url=www.baidu.com"]];
 //    } else {
-        XYUrlAction *action = [self.actionArr objectAtIndex:indexPath.row];
+        MDUrlAction *action = [self.actionArr objectAtIndex:indexPath.row];
         if (action == nil) return;
-        [[XYPageMaster master] openURLAction:action];
+        [[MDPageMaster master] openURLAction:action];
 //    }
 
 }

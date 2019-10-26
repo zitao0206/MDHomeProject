@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <XYPageMaster/XYPageMaster.h>
+#import <MDPageMaster/MDPageMaster.h>
 
-@interface MDHotfixViewController : XYPageMasterViewController
+@interface MDHotfixViewController : MDPageMasterViewController
 
 @end
 

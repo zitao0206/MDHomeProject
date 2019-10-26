@@ -9,7 +9,7 @@
 #import "MDToViewController.h"
 #import "MDToViewControllerBackTransition.h"
 #import "MDFromViewController.h"
-#import "XYUrlAction.h"
+#import <MDPageMaster/MDPageMaster.h>
 
 @interface MDToViewController ()
 @property (nonatomic, strong) UIImage *image;
@@ -18,7 +18,7 @@
 
 @implementation MDToViewController
 
-- (void)handleWithURLAction:(XYUrlAction *)urlAction
+- (void)handleWithURLAction:(MDUrlAction *)urlAction
 {
     self.image = (UIImage *)[urlAction anyObjectForKey:@"image"];
 }

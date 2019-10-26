@@ -9,7 +9,7 @@
 #import "MDWebViewViewController.h"
 #import <EasyLayout/EasyLayout.h>
 #import <JavaScriptCore/JavaScriptCore.h>
-#import <MDReactDataBoard/MDReactWhiteBoard.h>
+#import <ReactiveDataBoard/ReactiveDataBoard.h>
 
 @interface MDWebViewViewController () <UIWebViewDelegate>
 
@@ -91,12 +91,12 @@
 
 - (void)labelTouchUpInside:(UITapGestureRecognizer *)recognizer
 {
-    XYNaviTransition *naviTransiton = [XYNaviTransition new];
-    naviTransiton.animation = XYNaviAnimationTransition;
+    MDNaviTransition *naviTransiton = [MDNaviTransition new];
+    naviTransiton.animation = MDNaviAnimationTransition;
     naviTransiton.transition.type = kCATransitionReveal;
     naviTransiton.transition.subtype = kCATransitionFromBottom;
     naviTransiton.transition.duration = 2.0;
-    [[XYPageMaster master].navigationContorller popCurrentViewControllerWithTransition:naviTransiton];
+    [[MDPageMaster master].navigationContorller popCurrentViewControllerWithTransition:naviTransiton];
     
 }
 

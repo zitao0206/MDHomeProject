@@ -6,8 +6,8 @@
 //  Copyright © 2017年 lizitao. All rights reserved.
 //
 
-#import <XYPageMaster/XYPageMaster.h>
+#import <MDPageMaster/MDPageMaster.h>
 
-@interface MDRACViewController : XYPageMasterViewController
+@interface MDRACViewController : MDPageMasterViewController
 
 @end

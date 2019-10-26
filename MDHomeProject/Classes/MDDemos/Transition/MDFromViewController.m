@@ -7,7 +7,7 @@
 //
 
 #import "MDFromViewController.h"
-#import "XYPageMaster.h"
+#import <MDPageMaster/MDPageMaster.h>
 #import "MDFromViewControllerForwardTransition.h"
 #import "MDToViewController.h"
 
@@ -85,14 +85,14 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://trandetail"]];
+    MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://trandetail"]];
     if (indexPath.row > 10) {
         [action setAnyObject:[UIImage imageNamed:@"desktop.png"] forKey:@"image"];
     } else {
         [action setAnyObject:[UIImage imageNamed:@"launch.jpg"] forKey:@"image"];
     }
     if (action == nil) return;
-    [[XYPageMaster master] openURLAction:action];
+    [[MDPageMaster master] openURLAction:action];
 
 }
 

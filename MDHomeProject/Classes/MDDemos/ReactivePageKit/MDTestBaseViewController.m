@@ -6,11 +6,11 @@
 //
 
 #import "MDTestBaseViewController.h"
-#import "MDReactBlackBoard.h"
+#import <ReactiveDataBoard/ReactiveDataBoard.h>
 
 @interface MDTestBaseViewController ()
 
-@property (nonatomic, strong) MDReactBlackBoard *blackBoard;
+@property (nonatomic, strong) ReactiveBlackBoard *blackBoard;
 
 @end
 
@@ -28,17 +28,14 @@
     model.title = @"hello";
     self.model = model;
     
-    [[self.blackBoard signalForKey:@"hello123"] subscribeNext:^(id  _Nullable x) {
-        
-        NSLog(@"------->%@",x);
-        
+    [[self.blackBoard addObserver:self forKey:@"hello123"] subscribeNext:^(id  _Nullable x) {
+         NSLog(@"------->%@",x);
     }];
     
-    [[self.blackBoard signalForKey:@"hello"] subscribeNext:^(id  _Nullable x) {
-        
-        NSLog(@"------->%@",x);
-        
+    [[self.blackBoard addObserver:self forKey:@"hello"] subscribeNext:^(id  _Nullable x) {
+         NSLog(@"------->%@",x);
     }];
+    
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
@@ -47,10 +44,10 @@
     });
 }
 
-- (MDReactBlackBoard *)blackBoard
+- (ReactiveBlackBoard *)blackBoard
 {
     if(nil == _blackBoard){
-        _blackBoard = [[MDReactBlackBoard alloc] init];
+        _blackBoard = [[ReactiveBlackBoard alloc] init];
     }
     return _blackBoard;
 }

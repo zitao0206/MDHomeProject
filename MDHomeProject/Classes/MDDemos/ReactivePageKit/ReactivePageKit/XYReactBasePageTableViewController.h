@@ -6,8 +6,8 @@
 //  Copyright © 2018年 lizitao. All rights reserved.
 //
 
-#import <XYPageMaster/XYPageMaster.h>
+#import <MDPageMaster/MDPageMaster.h>
 
-@interface XYReactBasePageTableViewController : XYPageMasterViewController
+@interface XYReactBasePageTableViewController : MDPageMasterViewController
 
 @end

@@ -9,8 +9,8 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "MDNavigationManager.h"
+#import <MDPageMaster/MDPageMaster.h>
 
-#import <XYPageMaster/XYPageMaster.h>
 //#import <XYFelix/XYFelix.h>
 
 typedef NS_ENUM(NSInteger, LaunchMode) {
@@ -70,8 +70,8 @@ typedef NS_ENUM(NSInteger, LaunchMode) {
 - (void)setupNavigator
 {
     NSDictionary *params = @{@"schema":@"mydemo",@"pagesFile":@"urlmapping",@"rootVC":@"MainViewController"};
-    [[XYPageMaster master] setupNavigationControllerWithParams:params];
-    self.window.rootViewController = [XYPageMaster master].navigationContorller;
+    [[MDPageMaster master] setupNavigationControllerWithParams:params];
+    self.window.rootViewController = [MDPageMaster master].navigationContorller;
 }
 
 

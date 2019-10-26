@@ -7,7 +7,7 @@
 //
 
 #import "MDWindowViewController.h"
-#import "MDReactWhiteBoard.h"
+#import <ReactiveDataBoard/ReactiveDataBoard.h>
 
 @interface MDWindowViewController ()
 
@@ -19,13 +19,6 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    [[[MDReactWhiteBoard shareBoard] signalForKey:@"duplicate_signal_test"] subscribeNext:^(id  _Nullable x) {
-        NSLog(@"3执行了。。。。");
-    }];
-    [[[MDReactWhiteBoard shareBoard] signalForKey:@"duplicate_signal_test"] subscribeNext:^(id  _Nullable x) {
-        NSLog(@"4执行了。。。。");
-    }];
    
 }
 

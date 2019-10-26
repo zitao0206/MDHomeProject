@@ -6,8 +6,8 @@
 //  Copyright © 2018年 lizitao. All rights reserved.
 //
 
-#import <XYPageMaster/XYPageMaster.h>
+#import <MDPageMaster/MDPageMaster.h>
 
-@interface MDRuntimeInvocationViewController : XYPageMasterViewController
+@interface MDRuntimeInvocationViewController : MDPageMasterViewController
 
 @end

@@ -6,9 +6,9 @@
 //  Copyright © 2017年 lizitao. All rights reserved.
 //
 
-#import <XYPageMaster/XYPageMaster.h>
+#import <MDPageMaster/MDPageMaster.h>
 
-@interface TestBlockViewController : XYPageMasterViewController
+@interface TestBlockViewController : MDPageMasterViewController
 
 - (instancetype)initWithBlock:(void (^)())block;
 

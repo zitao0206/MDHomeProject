@@ -42,8 +42,8 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-   s.dependency 'MDReactDataBoard'
-   s.dependency 'XYPageMaster'
+
+   s.dependency 'MDPageMaster'
    s.dependency 'SSZipArchive'
    s.dependency 'MDCommonKit'
    s.dependency 'MDEasyCache'

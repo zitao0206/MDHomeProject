@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <XYPageMaster/XYPageMaster.h>
+#import <MDPageMaster/MDPageMaster.h>
 
-@interface MDWebViewViewController : XYPageMasterViewController
+@interface MDWebViewViewController : MDPageMasterViewController
 
 @end
 
