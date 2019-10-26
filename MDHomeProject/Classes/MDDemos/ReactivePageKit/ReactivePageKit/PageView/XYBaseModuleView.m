@@ -8,7 +8,7 @@
 #import "XYBaseModuleView.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "XYBaseModuleViewDelegate.h"
-#import "UIView+ResizeFrame.h"
+#import <EasyLayout/EasyLayout.h>
 
 @interface XYBaseModuleView ()<XYBaseModuleViewDelegate>
 

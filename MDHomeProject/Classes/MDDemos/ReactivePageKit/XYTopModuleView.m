@@ -6,7 +6,8 @@
 //
 
 #import "XYTopModuleView.h"
-#import "UIView+ResizeFrame.h"
+#import <EasyLayout/EasyLayout.h>
+
 @implementation XYTopModuleView
 
 - (instancetype)init

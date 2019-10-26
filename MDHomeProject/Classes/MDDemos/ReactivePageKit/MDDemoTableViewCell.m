@@ -7,7 +7,7 @@
 //
 
 #import "MDDemoTableViewCell.h"
-#import "UIView+ResizeFrame.h"
+#import <EasyLayout/EasyLayout.h>
 #import "MDDemoTableViewCellModel.h"
 
 @interface MDDemoTableViewCell ()

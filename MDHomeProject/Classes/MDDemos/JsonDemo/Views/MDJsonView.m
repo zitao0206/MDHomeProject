@@ -11,7 +11,7 @@
 #import "MDJsonLabelModel.h"
 #import "MDJsonLabel.h"
 #import <MDCommonKit/MDCommonKit.h>
-#import <MDCommonKit/UIView+ResizeFrame.h>
+#import <EasyLayout/EasyLayout.h>
 #import "MDJsonImageView.h"
 
 @interface MDJsonView ()

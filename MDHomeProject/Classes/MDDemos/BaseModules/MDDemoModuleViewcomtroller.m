@@ -7,7 +7,7 @@
 //
 
 #import "MDDemoModuleViewcomtroller.h"
-#import <MDCommonKit/UIView+ResizeFrame.h>
+#import <EasyLayout/EasyLayout.h>
 
 @interface MDDemoModuleViewcomtroller ()
 

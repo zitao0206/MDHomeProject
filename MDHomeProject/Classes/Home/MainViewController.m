@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 #import "XYUrlAction.h"
-#import <MDCommonKit/UIView+ResizeFrame.h>
+#import <EasyLayout/EasyLayout.h>
 #import "MDDemoModuleViewcomtroller.h"
 #import "MDBaseModuleModel.h"
 #import "MDZipArchiveViewController.h"
@@ -111,55 +111,11 @@
 }
 
 
-- (void)clickBtn1:(UIButton *)sender
-{
-    
-    // 创建一个测试的alertView
-    
-    UIAlertView *alterView = [[UIAlertView alloc] initWithTitle:@"测试" message:@"测试" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
-    [alterView show];
-    UIWindow *window1 = [UIApplication sharedApplication].keyWindow;
-    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    UIWindow *window2 = appdelegate.window;
-    NSLog(@"\n\nwindow1 = %@    \n\nwindow2 = %@  \n\nwindow1.rootViewController = %@ \n\nwindow2.rootViewController = %@",window1,window2,window1.rootViewController,window2.rootViewController);
-    
-}
-
-
-- (void)clickBtn:(UIButton *)sender
-{
-    // 创建一个测试的alertView
-    UIAlertController *alertController =  [UIAlertController alertControllerWithTitle:@"Test" message:@"test..." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"xiaoying_str_com_cancel", @"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-    }];
-    
-    UIAlertAction *actionAskAgain = [UIAlertAction actionWithTitle:@"Cacel" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-    }];
-    
-    [alertController addAction:actionAskAgain];
-    [self presentViewController:alertController animated:YES completion:nil];
-    
-    UIWindow *window0 = alertController.view.window;
-    
-    UIWindow *window1 = [UIApplication sharedApplication].keyWindow;
-    
-    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    UIWindow *window2 = appdelegate.window;
-    
-    NSLog(@"\nwindow0=%@\nwindow0.rootViewController = %@",window0,window0.rootViewController);
-    
-    
-    NSLog(@"\n\nwindow1 = %@    \n\nwindow2 = %@  \n\nwindow1.rootViewController = %@ \n\nwindow2.rootViewController = %@",window1,window2,window1.rootViewController,window2.rootViewController);
-  
-    
-}
-
-
-
 - (void)loadTitleArray
 {
     self.titleArr = [NSMutableArray new];
     NSArray *array = @[
+                       @"AFNetworking",                     //23
                        @"WebView",                          //22
                        @"XYFelix",                          //21
                        @"CATransition",                     //20
@@ -190,6 +146,10 @@
 - (void)loadActionArray
 {
     self.actionArr = [NSMutableArray new];
+    {//23
+          XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://afn"]];
+          [self.actionArr addObject:action];
+    }
     {//22
         XYUrlAction *action = [XYUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://webview"]];
         [self.actionArr addObject:action];
@@ -335,25 +295,25 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0)
-    {
-        BOOL isPhone = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]];
-        NSLog(@"----->isPhone:%@",@(isPhone));
+//    if (indexPath.row == 0)
+//    {
+//        BOOL isPhone = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]];
+//        NSLog(@"----->isPhone:%@",@(isPhone));
         
-        [[XYPageMaster master] openUrl:@"mydemo://webview" action:^(XYUrlAction * _Nullable action) {
+//        [[XYPageMaster master] openUrl:@"mydemo://webview" action:^(XYUrlAction * _Nullable action) {
 //            XYNaviTransition *naviTransiton = [XYNaviTransition new];
 //            naviTransiton.animation = XYNaviAnimationTransition;
 //            naviTransiton.transition.type = kCATransitionMoveIn;
 //            naviTransiton.transition.subtype = kCATransitionFromTop;
 //            naviTransiton.transition.duration = 0.3;
 //            action.naviTransition = naviTransiton;
-        }];
+//        }];
 //        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"xiaoying://url=www.baidu.com"]];
-    } else {
+//    } else {
         XYUrlAction *action = [self.actionArr objectAtIndex:indexPath.row];
         if (action == nil) return;
         [[XYPageMaster master] openURLAction:action];
-    }
+//    }
 
 }
 

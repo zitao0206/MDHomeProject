@@ -7,7 +7,7 @@
 //
 
 #import "MDWebViewViewController.h"
-#import "UIView+ResizeFrame.h"
+#import <EasyLayout/EasyLayout.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 #import <MDReactDataBoard/MDReactWhiteBoard.h>
 

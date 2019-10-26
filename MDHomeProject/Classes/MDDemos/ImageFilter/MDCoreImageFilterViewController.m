@@ -7,7 +7,7 @@
 //
 
 #import "MDCoreImageFilterViewController.h"
-#import <MDCommonKit/UIView+ResizeFrame.h>
+#import <EasyLayout/EasyLayout.h>
 
 @interface MDCoreImageFilterViewController ()
 @property (nonatomic, strong) UIImageView *imageView;

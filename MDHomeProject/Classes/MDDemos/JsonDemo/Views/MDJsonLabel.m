@@ -7,7 +7,7 @@
 //
 
 #import "MDJsonLabel.h"
-#import <MDCommonKit/MDCommonKit.h>
+#import <EasyLayout/EasyLayout.h>
 
 @interface MDJsonLabel ()
 

@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIView+ResizeFrame.h"
+#import <EasyLayout/EasyLayout.h>
 @class RACSubject;
 @interface XYBaseModuleView : UIView
 @property (nonatomic, strong) RACSubject *heightSignal;
