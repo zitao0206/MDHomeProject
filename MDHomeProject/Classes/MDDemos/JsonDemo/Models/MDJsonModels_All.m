@@ -42,7 +42,7 @@
     self.type = [dictionaryValue objectForKey:@"type"];
     NSString *backgroundColorHex = [dictionaryValue objectForKey:@"backgroundColor"];
     if (backgroundColorHex.length) {
-        self.backgroundColor = [UIColor nvColorWithHexString:backgroundColorHex];
+        self.backgroundColor = [UIColor md_colorWithHexString:backgroundColorHex];
     }
     self.y = [[dictionaryValue objectForKey:@"y"] doubleValue];
     self.x = [[dictionaryValue objectForKey:@"x"] doubleValue];
@@ -104,7 +104,7 @@
 {
     NSString *textColor = [dictionaryValue objectForKey:@"textColor"];
     if (textColor.length) {
-        self.textColor = [UIColor nvColorWithHexString:textColor];
+        self.textColor = [UIColor md_colorWithHexString:textColor];
     }
     self.textSize = [[dictionaryValue objectForKey:@"textSize"] doubleValue];
     self.text = [dictionaryValue objectForKey:@"text"];

@@ -47,11 +47,6 @@
     [self loadTitleArray];
     [self loadActionArray];
     
-//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.view).offset(15);
-//        make.left.equalTo(self.view).offset(15);
-//    }];
-    
     self.mutableArray = [NSMutableArray arrayWithCapacity:5];
     for (int i = 0; i < 5; i++) {
         [self.mutableArray addObject:[NSString stringWithFormat:@"object-%i", i]];
@@ -100,6 +95,7 @@
 {
     self.titleArr = [NSMutableArray new];
     NSArray *array = @[
+                       @"HoverView",                     //24
                        @"AFNetworking",                     //23
                        @"WebView",                          //22
                        @"MDFelix",                          //21
@@ -131,6 +127,10 @@
 - (void)loadActionArray
 {
     self.actionArr = [NSMutableArray new];
+    {//24
+          MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://hover"]];
+          [self.actionArr addObject:action];
+    }
     {//23
           MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://afn"]];
           [self.actionArr addObject:action];
