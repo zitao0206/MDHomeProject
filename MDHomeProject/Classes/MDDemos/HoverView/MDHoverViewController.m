@@ -170,7 +170,7 @@
 {
     //滑块部分可任意替换
     if (!_sliderView) {
-        NSArray *itemArr = @[@"本月收款排行榜",@"年度收款排行榜"];
+        NSArray *itemArr = @[@"音乐",@"动态"];
         _sliderView = [[FDSlideBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, sliderHeight)];
         _sliderView.backgroundColor = [UIColor whiteColor];
         _sliderView.itemsWidth = SCREEN_WIDTH / itemArr.count;

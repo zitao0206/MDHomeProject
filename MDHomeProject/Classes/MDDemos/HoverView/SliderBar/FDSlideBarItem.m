@@ -17,7 +17,6 @@
 
 @interface FDSlideBarItem ()
 
-
 @property (assign, nonatomic) CGFloat fontSize;
 @property (assign, nonatomic) CGFloat selectedFontSize;
 @property (strong, nonatomic) UIColor *color;

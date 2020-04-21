@@ -27,7 +27,8 @@
 @implementation FDSlideBar
 
 #pragma mark - Lifecircle
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame
+{
     if (self= [super initWithFrame:frame]) {
         _items = [NSMutableArray array];
         [self initScrollView];
@@ -36,43 +37,50 @@
     return self;
 }
 
--(void)setItemFontSize:(NSInteger)itemFontSize{
+- (void)setItemFontSize:(NSInteger)itemFontSize
+{
     
     _itemFontSize = itemFontSize;
 }
 
 #pragma - mark Custom Accessors
 
-- (void)setItemsTitle:(NSArray *)itemsTitle {
+- (void)setItemsTitle:(NSArray *)itemsTitle
+{
     _itemsTitle = itemsTitle;
     [self setupItems];
 }
 
-- (void)setItemColor:(UIColor *)itemColor {
+- (void)setItemColor:(UIColor *)itemColor
+{
     for (FDSlideBarItem *item in _items) {
         [item setItemTitleColor:itemColor];
     }
 }
 
-- (void)setItemSelectedColor:(UIColor *)itemSelectedColor {
+- (void)setItemSelectedColor:(UIColor *)itemSelectedColor
+{
     for (FDSlideBarItem *item in _items) {
         [item setItemSelectedTitleColor:itemSelectedColor];
     }
 }
 
-- (void)setSliderColor:(UIColor *)sliderColor {
+- (void)setSliderColor:(UIColor *)sliderColor
+{
     _sliderColor = sliderColor;
     self.sliderView.backgroundColor = _sliderColor;
 }
 
-- (void)setSelectedItem:(FDSlideBarItem *)selectedItem {
+- (void)setSelectedItem:(FDSlideBarItem *)selectedItem
+{
     _selectedItem.selected = NO;
     _selectedItem = selectedItem;
 }
 
 #pragma - mark Private
 
-- (void)initScrollView {
+- (void)initScrollView
+{
     _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     _scrollView.backgroundColor = [UIColor clearColor];
     _scrollView.showsHorizontalScrollIndicator = NO;
@@ -81,7 +89,8 @@
     [self addSubview:_scrollView];
 }
 
-- (void)initSliderView {
+- (void)initSliderView
+{
     
     _sliderView = [[UIView alloc] init];
     _sliderColor = DEFAULT_SLIDER_COLOR;
@@ -91,7 +100,8 @@
     [_scrollView addSubview:_sliderView];
 }
 
-- (void)setupItems {
+- (void)setupItems
+{
     CGFloat itemX = 0;
     for (NSString *title in _itemsTitle) {
         FDSlideBarItem *item = [[FDSlideBarItem alloc] init];
@@ -119,7 +129,8 @@
     _sliderView.frame = CGRectMake((_itemsWidth-itemW)/2, self.frame.size.height - SLIDER_VIEW_HEIGHT, itemW, SLIDER_VIEW_HEIGHT);
 }
 
-- (void)scrollToVisibleItem:(FDSlideBarItem *)item {
+- (void)scrollToVisibleItem:(FDSlideBarItem *)item
+{
     NSInteger selectedItemIndex = [self.items indexOfObject:_selectedItem];
     NSInteger visibleItemIndex = [self.items indexOfObject:item];
     
@@ -154,7 +165,8 @@
     _scrollView.contentOffset = offset;
 }
 
-- (void)addAnimationWithSelectedItem:(FDSlideBarItem *)item isYes:(BOOL)isYes{
+- (void)addAnimationWithSelectedItem:(FDSlideBarItem *)item isYes:(BOOL)isYes
+{
     // Caculate the distance of translation
     CGFloat dx = CGRectGetMidX(item.frame) - CGRectGetMidX(_selectedItem.frame);
     CGFloat positionX;//初始位移
@@ -190,12 +202,14 @@
 
 #pragma mark - Public
 
-- (void)slideBarItemSelectedCallback:(FDSlideBarItemSelectedCallback)callback {
+- (void)slideBarItemSelectedCallback:(FDSlideBarItemSelectedCallback)callback
+{
 
     _callback = callback;
 }
 
-- (void)selectSlideBarItemAtIndex:(NSUInteger)index {
+- (void)selectSlideBarItemAtIndex:(NSUInteger)index
+{
     FDSlideBarItem *item = [self.items objectAtIndex:index];
     if (item == _selectedItem) {
         return;
@@ -209,7 +223,8 @@
 
 #pragma mark - FDSlideBarItemDelegate
 
-- (void)slideBarItemSelected:(FDSlideBarItem *)item {
+- (void)slideBarItemSelected:(FDSlideBarItem *)item
+{
     if (item == _selectedItem) {
         return;
     }
