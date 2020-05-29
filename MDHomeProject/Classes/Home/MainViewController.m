@@ -46,55 +46,13 @@
     [self.view addSubview:self.tableView];
     [self loadTitleArray];
     [self loadActionArray];
-    
-    self.mutableArray = [NSMutableArray arrayWithCapacity:5];
-    for (int i = 0; i < 5; i++) {
-        [self.mutableArray addObject:[NSString stringWithFormat:@"object-%i", i]];
-    }
-    [self test];
-
 }
-
-- (void)test
-{
-    NSString *ooo = @"ooo";
-    NSString *fff = @"fff";
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self updateMutableArray:ooo];
-    });
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self updateMutableArray:fff];
-    });
-    
-}
-
-- (void)updateMutableArray:(NSString *)value
-{
-    @synchronized (self.mutableArray)
-    {
-        for (int i = 0; i < self.mutableArray.count; i ++) {
-            NSString *currentObject = [self.mutableArray objectAtIndex:i];
-            [self.mutableArray replaceObjectAtIndex:i withObject:[currentObject stringByAppendingFormat:@"-%@", value]];
-            NSLog(@"1-%@", [self.mutableArray objectAtIndex:i]);
-        }
-    }
-}
-
-- (void)updateMutableArray2:(NSString *)value
-{
-    for (int i = 0; i < self.mutableArray.count; i ++) {
-        NSString *currentObject = [self.mutableArray objectAtIndex:i];
-        [self.mutableArray replaceObjectAtIndex:i withObject:[currentObject stringByAppendingFormat:@"-%@", value]];
-        NSLog(@"2-%@", [self.mutableArray objectAtIndex:i]);
-    }
-}
-
 
 - (void)loadTitleArray
 {
     self.titleArr = [NSMutableArray new];
     NSArray *array = @[
+                       @"MultiRoleView",                  //25
                        @"HoverView",                     //24
                        @"AFNetworking",                     //23
                        @"WebView",                          //22
@@ -127,6 +85,10 @@
 - (void)loadActionArray
 {
     self.actionArr = [NSMutableArray new];
+    {//25
+            MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://multirole"]];
+            [self.actionArr addObject:action];
+    }
     {//24
           MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://hover"]];
           [self.actionArr addObject:action];

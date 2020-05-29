@@ -1,9 +1,9 @@
 //
 //  MDGestureTableView.m
-//  CarSteward
+//  MDProject
 //
-//  Created by 李雪阳 on 2018/8/27.
-//  Copyright © 2018年 singularity. All rights reserved.
+//  Created by lizitao on 2018/2/22.
+//  Copyright © 2018年 lizitao. All rights reserved.
 //
 
 #import "MDGestureTableView.h"
