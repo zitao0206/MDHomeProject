@@ -52,6 +52,7 @@
 {
     self.titleArr = [NSMutableArray new];
     NSArray *array = @[
+                       @"WeakInstance",                  //26
                        @"MultiRoleView",                  //25
                        @"HoverView",                     //24
                        @"AFNetworking",                     //23
@@ -85,6 +86,10 @@
 - (void)loadActionArray
 {
     self.actionArr = [NSMutableArray new];
+    {//26
+               MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://WeakInstance"]];
+               [self.actionArr addObject:action];
+    }
     {//25
             MDUrlAction *action = [MDUrlAction actionWithURL:[NSURL URLWithString:@"mydemo://multirole"]];
             [self.actionArr addObject:action];
