@@ -51,7 +51,7 @@
 - (void)buildInstance:(MDWeakInstanceManager *)instance identifier:(NSString *)identifier
 {
     if ([identifier isEqualToString:@"A"]) {
-        self.aInstance = instance;
+        self.instance = instance;
     }
 }
 
