@@ -46,6 +46,7 @@
     [self.view addSubview:self.tableView];
     [self loadTitleArray];
     [self loadActionArray];
+
 }
 
 - (void)loadTitleArray
