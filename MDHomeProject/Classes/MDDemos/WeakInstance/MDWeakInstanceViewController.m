@@ -7,13 +7,17 @@
 //
 
 #import "MDWeakInstanceViewController.h"
-#import "MDWeakInstanceManager.h"
+#import "MDBaseWeakInstanceManager.h"
 #import <MDCommonKit/MDCommonKit.h>
 #import <EasyLayout/EasyLayout.h>
+#import "MDInstanceManager.h"
+#import "MDWeakInstanceManager.h"
 
-@interface MDWeakInstanceViewController ()<MDWeakInstanceManagerDelegate>
+@interface MDWeakInstanceViewController ()<MDBaseWeakInstanceManagerDelegate, MDWeakInstanceManagerDelegate>
 @property (nonatomic, strong) UIButton *btn;
-@property (nonatomic, strong) MDWeakInstanceManager *instance;
+//@property (nonatomic, strong) MDBaseWeakInstanceManager *instance;
+
+@property (nonatomic, strong) MDWeakInstanceManager *weakInstanceManager;
 
 @end
 
@@ -27,14 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [MDWeakInstanceManager buildInstance:self identifier:@"A"];
+//    [MDBaseWeakInstanceManager buildInstance:self identifier:@"A"];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-       
-        NSLog(@"%@",[MDWeakInstanceManager shareInstance]);
-
-        
-    });
+    [MDWeakInstanceManager buildInstance:self];
+   
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.size = CGSizeMake(80, 40);
     [btn setTitle:@"点击这里" forState:UIControlStateNormal];
@@ -44,15 +44,28 @@
     [self.view addSubview:btn];
     self.btn = btn;
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    MDInstanceManager *instanceManager = [MDInstanceManager shareInstance];
+    NSLog(@"-->%@",instanceManager);
+//    NSLog(@"-->%@",[[MDInstanceManager alloc]init]);
+//    NSLog(@"-->%@",[instanceManager copy]);
+//    NSLog(@"-->%@",[instanceManager mutableCopy]);
+    
+    
 }
 
-#pragma mark -- MDWeakInstanceManagerDelegate
+#pragma mark -- MDBaseWeakInstanceManagerDelegate
 
-- (void)buildInstance:(MDWeakInstanceManager *)instance identifier:(NSString *)identifier
+//- (void)buildInstance:(MDBaseWeakInstanceManager *)instance identifier:(NSString *)identifier
+//{
+//    if ([identifier isEqualToString:@"A"]) {
+//        self.instance = instance;
+//    }
+//}
+
+- (void)assignInstance:(MDWeakInstanceManager *)instance
 {
-    if ([identifier isEqualToString:@"A"]) {
-        self.instance = instance;
-    }
+    self.weakInstanceManager = instance;
 }
 
 - (void)viewDidLayoutSubviews

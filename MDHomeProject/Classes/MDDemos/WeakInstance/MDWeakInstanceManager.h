@@ -13,17 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MDWeakInstanceManagerDelegate <NSObject>
 
-- (void)buildInstance:(MDWeakInstanceManager *)instance identifier:(NSString *)identifier;
+- (void)assignInstance:(MDWeakInstanceManager *)instance;
 
 @end
 
 @interface MDWeakInstanceManager : NSObject
 
-@property (nonatomic, copy) NSString *identifier;
-
-@property (nonatomic, weak) id delegate;
-
-+ (void)buildInstance:(id)delegate identifier:(NSString *)identifier;
++ (void)buildInstance:(id)delegate;
 
 //访问时须用此方法
 + (MDWeakInstanceManager *)shareInstance;

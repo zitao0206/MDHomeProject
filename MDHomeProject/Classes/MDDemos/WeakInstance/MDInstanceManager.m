@@ -16,7 +16,9 @@ static dispatch_once_t onceToken;
 + (instancetype)shareInstance
 {
     dispatch_once(&onceToken, ^{
-        shareInstance = [[self alloc] init];
+        if(!shareInstance) {
+            shareInstance = [[self alloc] init];
+        }
     });
     return shareInstance;
 }
@@ -26,15 +28,18 @@ static dispatch_once_t onceToken;
 
 + (id)allocWithZone:(NSZone *)zone
 {
+    if(!shareInstance) {
+        shareInstance = [super allocWithZone:zone];
+    }
     return shareInstance;
 }
 
-- (id)copyWithZone:(NSZone *)zone
+- (id)copy
 {
     return shareInstance;
 }
 
-- (id)mutableCopyWithZone:(NSZone *)zone
+- (id)mutableCopy
 {
     return shareInstance;
 }

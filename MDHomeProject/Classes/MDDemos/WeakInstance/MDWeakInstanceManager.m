@@ -7,6 +7,11 @@
 
 #import "MDWeakInstanceManager.h"
 
+@interface MDWeakInstanceManager ()
+@property (nonatomic, weak) id delegate;
+
+@end
+
 @implementation MDWeakInstanceManager
 
 static __weak MDWeakInstanceManager *weakInstance = nil;
@@ -16,19 +21,18 @@ static __weak MDWeakInstanceManager *weakInstance = nil;
     
 }
 
-+ (void)buildInstance:(id)delegate identifier:(NSString *)identifier;
++ (void)buildInstance:(id)delegate;
 {
     MDWeakInstanceManager *strongInstance = weakInstance;
     @synchronized(self) {
-        if (!strongInstance || ![strongInstance.identifier isEqualToString:identifier]) {
+        if (!strongInstance) {
             strongInstance = [[[self class] alloc] init];
-            strongInstance.identifier = identifier;
             weakInstance = strongInstance;
         }
     }
     strongInstance.delegate = delegate;
-    if (strongInstance.delegate && [strongInstance.delegate respondsToSelector:@selector(buildInstance:identifier:)]) {
-        [strongInstance.delegate buildInstance:strongInstance identifier:identifier];
+    if (strongInstance.delegate && [strongInstance.delegate respondsToSelector:@selector(assignInstance:)]) {
+        [strongInstance.delegate assignInstance:strongInstance];
     }
 }
 
