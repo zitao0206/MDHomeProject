@@ -47,7 +47,7 @@
     [self loadTitleArray];
     [self loadActionArray];
     
-    NSLog(@"hello world...");
+//    NSLog(@"hello world...");
 }
 
 - (void)loadTitleArray
