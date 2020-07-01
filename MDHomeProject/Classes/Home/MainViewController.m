@@ -48,7 +48,6 @@
     [self loadActionArray];
     
     NSLog(@"hello 杭州...");
-    NSLog(@"hello 上海...");
 }
 
 - (void)loadTitleArray
