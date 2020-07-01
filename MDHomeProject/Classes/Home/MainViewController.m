@@ -46,8 +46,7 @@
     [self.view addSubview:self.tableView];
     [self loadTitleArray];
     [self loadActionArray];
-    
-    NSLog(@"hello 上海");
+
 }
 
 - (void)loadTitleArray
