@@ -7,28 +7,29 @@
 
 #import "MDBaseWeakInstanceManager.h"
 
+@interface MDBaseWeakInstanceManager ()
+
+@end
+
 @implementation MDBaseWeakInstanceManager
 
 static __weak MDBaseWeakInstanceManager *weakInstance = nil;
 
 - (void)dealloc
 {
-    
+    NSLog(@"------------->%@",NSStringFromClass([self class]));
 }
 
-+ (void)buildInstance:(id)delegate identifier:(NSString *)identifier;
++ (void)buildInstance:(id)delegate;
 {
-    MDBaseWeakInstanceManager *strongInstance = weakInstance;
-    @synchronized(self) {
-        if (!strongInstance || ![strongInstance.identifier isEqualToString:identifier]) {
-            strongInstance = [[[self class] alloc] init];
-            strongInstance.identifier = identifier;
-            weakInstance = strongInstance;
-        }
+    MDBaseWeakInstanceManager *strongInstance = nil;
+    if (!strongInstance) {
+        strongInstance = [[[self class] alloc] init];
+        weakInstance = strongInstance;
     }
     strongInstance.delegate = delegate;
-    if (strongInstance.delegate && [strongInstance.delegate respondsToSelector:@selector(buildInstance:identifier:)]) {
-        [strongInstance.delegate buildInstance:strongInstance identifier:identifier];
+    if (strongInstance.delegate && [strongInstance.delegate respondsToSelector:@selector(assignInstance:)]) {
+        [strongInstance.delegate assignInstance:strongInstance];
     }
 }
 
@@ -44,6 +45,5 @@ static __weak MDBaseWeakInstanceManager *weakInstance = nil;
     }
     return self;
 }
-
 
 @end

@@ -10,7 +10,6 @@
 @implementation MDInstanceManager
 
 static MDInstanceManager *shareInstance = nil;
-
 static dispatch_once_t onceToken;
 
 + (instancetype)shareInstance

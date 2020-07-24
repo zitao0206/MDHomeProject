@@ -30,12 +30,11 @@
     
     NSMutableArray *arr = [[NSMutableArray alloc]init];
     [arr addObject:@[@"labelType",@"杭州"]];
-    [arr addObject:@[@"mixType",@"上海",[UIImage imageNamed:@"launch.jpg"]]];
+    [arr addObject:@[@"labelType",@"上海"]];
     [arr addObject:@[@"imageType",[UIImage imageNamed:@"desktop.png"]]];
     [arr addObject:@[@"labelType",@"深圳"]];
     
     [self.nameRoleView reloadItemsData:arr];
-    [self.nameRoleView setNeedsLayout];
 }
 
 
@@ -65,9 +64,9 @@
                 NMLKMultiRoleItemViewConfig *imageConfig = [NMLKMultiRoleItemViewConfig new];
                 imageConfig.itemType = NMLKMultiRoleItemImageType;
                 imageConfig.itemSpace = 6;
-                imageConfig.imageViewConfig.maxWidth = 154;
-                imageConfig.imageViewConfig.fixedHeight = 18;
-                itemsConfig = @{@"labelType":labelConfig,@"imageType":imageConfig};
+                imageConfig.imageViewConfig.isFixedSize = YES;
+                imageConfig.imageViewConfig.fixedSize = CGSizeMake(60, 18);
+                itemsConfig = @{@"labelType":labelConfig,@"  ":imageConfig};
             }
             roleConfig.itemsConfig = itemsConfig;
         }];

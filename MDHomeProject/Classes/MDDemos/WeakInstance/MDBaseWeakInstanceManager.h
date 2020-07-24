@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MDBaseWeakInstanceManagerDelegate <NSObject>
 
-- (void)buildInstance:(MDBaseWeakInstanceManager *)instance identifier:(NSString *)identifier;
+- (void)assignInstance:(MDBaseWeakInstanceManager *)instance;
 
 @end
 
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id delegate;
 
-+ (void)buildInstance:(id)delegate identifier:(NSString *)identifier;
++ (void)buildInstance:(id)delegate;
 
 //访问时须用此方法
 + (MDBaseWeakInstanceManager *)shareInstance;

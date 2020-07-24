@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-typedef NS_ENUM(NSInteger, NMLKMultiRoleItemType) {
+typedef NS_ENUM(NSInteger, ItemType) {
     NMLKMultiRoleItemLabelType = 0,  //纯文字标签，数据源为title
     NMLKMultiRoleItemImageType = 1,  //纯图片，数据源为image
     NMLKMultiRoleItemMixType = 2,    //图片+文字，数据源为以上两者
@@ -58,7 +58,7 @@ typedef NS_ENUM(NSInteger, NMLKMultiRoleDirectionType) {
 
 typedef void(^NMLKMultiRoleItemClickBlock)(NSString *key);
 @interface NMLKMultiRoleItemViewConfig : NSObject
-@property(nonatomic, assign) NMLKMultiRoleItemType itemType;
+@property(nonatomic, assign) ItemType itemType;
 @property(nonatomic, assign) CGSize itemSize;
 @property(nonatomic, assign) CGFloat itemSpace; //与前一个item的边距，第一个item默认为0
 @property(nonatomic, strong) NMLKMultiRoleBgButtonConfig *bgBtnConfig;
