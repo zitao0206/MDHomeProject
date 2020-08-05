@@ -13,16 +13,4 @@
 
 @implementation MDAWeakInstanceManager
 
-+ (MDAWeakInstanceManager *)buildInstanceWith:(MDBaseWeakInstanceManager *)weakInstance
-{
-    MDAWeakInstanceManager *strongInstance = weakInstance;
-    @synchronized(self) {
-        if (!strongInstance) {
-            strongInstance = [[[self class] alloc] init];
-            weakInstance = strongInstance;
-        }
-    }
-    return strongInstance;
-}
-
 @end

@@ -19,10 +19,6 @@
 @property (nonatomic, strong) UIButton *btn;
  
 @property (nonatomic, strong) MDBaseWeakInstanceManager *instance;
-
-@property (nonatomic, strong) MDAWeakInstanceManager *aInstance;
-@property (nonatomic, strong) MDBWeakInstanceManager *bInstance;
-
 @end
 
 @implementation MDWeakInstanceViewController
@@ -36,13 +32,7 @@
 {
     [super viewDidLoad];
     
-    [MDAWeakInstanceManager buildInstance:self];
-    
-    [MDBWeakInstanceManager buildInstance:self];
-    
-//    [MDAWeakInstanceManager buildInstance:self];
-    
-//    [MDWeakInstanceManager buildInstance:self];
+    [MDBaseWeakInstanceManager buildInstance:self];
    
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.size = CGSizeMake(80, 40);
@@ -54,25 +44,27 @@
     self.btn = btn;
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    MDInstanceManager *instanceManager = [MDInstanceManager shareInstance];
-//    NSLog(@"-->%@",instanceManager);
+    MDBaseWeakInstanceManager *instanceManager = [MDBaseWeakInstanceManager shareInstance];
+    NSLog(@"-->%@",instanceManager);
 //    NSLog(@"-->%@",[[MDInstanceManager alloc]init]);
 //    NSLog(@"-->%@",[instanceManager copy]);
 //    NSLog(@"-->%@",[instanceManager mutableCopy]);
     
+}
+
+- (void)clickAction
+{
+    MDBaseWeakInstanceManager *instanceManager = [MDBaseWeakInstanceManager shareInstance];
+    NSLog(@"clicked:-->%@",instanceManager);
     
+    [self.navigationController pushViewController:[[MDWeakInstanceViewController alloc]init] animated:YES];
 }
 
 #pragma mark -- MDBaseWeakInstanceManagerDelegate
 
 - (void)assignInstance:(MDBaseWeakInstanceManager *)instance
 {
-    if ([instance isKindOfClass:[MDAWeakInstanceManager class]]) {
-        self.aInstance = instance;
-    }
-    if ([instance isKindOfClass:[MDBWeakInstanceManager class]]) {
-        self.bInstance = instance;
-    }
+    self.instance = instance;
 }
 
 //- (void)assignInstance:(MDWeakInstanceManager *)instance

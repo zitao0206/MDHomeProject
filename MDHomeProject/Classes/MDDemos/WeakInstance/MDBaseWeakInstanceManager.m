@@ -15,6 +15,8 @@
 
 static __weak MDBaseWeakInstanceManager *weakInstance = nil;
 
+static NSMapTable *roomTables;
+
 - (void)dealloc
 {
     NSLog(@"------------->%@",NSStringFromClass([self class]));
@@ -22,11 +24,14 @@ static __weak MDBaseWeakInstanceManager *weakInstance = nil;
 
 + (void)buildInstance:(id)delegate;
 {
-    MDBaseWeakInstanceManager *strongInstance = nil;
-    if (!strongInstance) {
-        strongInstance = [[[self class] alloc] init];
-        weakInstance = strongInstance;
+    if (!roomTables) {
+         roomTables = [NSMapTable weakToWeakObjectsMapTable];
     }
+    MDBaseWeakInstanceManager *strongInstance = [[[self class] alloc] init];
+    weakInstance = strongInstance;
+    
+    [roomTables setValue:strongInstance forKey:delegate];
+    
     strongInstance.delegate = delegate;
     if (strongInstance.delegate && [strongInstance.delegate respondsToSelector:@selector(assignInstance:)]) {
         [strongInstance.delegate assignInstance:strongInstance];
