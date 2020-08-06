@@ -20,14 +20,21 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    //这里必须要写
+    MDBaseModuleModel *model = [MDBaseModuleModel new];
+    model.title = @"名称";
+    self.model = model;
+    
 }
 
-- (NSArray *)loadContentViews
+- (NSArray *)moduleViews
 {
-    return @[@"MDDemoHeadModuleView",
-             @"MDDemoMiddleModuleView",
-             @"MDDemoBottomModuleView",
-             ];
+    return @[
+        @"MDDemoHeadModuleView",
+        @"MDDemoMiddleModuleView",
+        @"MDDemoBottomModuleView",
+    ];
 }
 
 - (CGFloat)contentViewWidth
@@ -35,7 +42,7 @@
     return [self screenWidth] - 30;
 }
 
-- (CGFloat)spacingBetweenSubviews
+- (CGFloat)spaceBetweenModuleViews
 {
     return 15.0;
 }

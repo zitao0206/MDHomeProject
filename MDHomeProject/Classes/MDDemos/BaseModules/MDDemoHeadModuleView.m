@@ -13,21 +13,32 @@
 @end
 @implementation MDDemoHeadModuleView
 
-- (instancetype)init
+- (void)loadModuleSubViews
 {
-    if (self = [super init]) {
-        self.backgroundColor = [UIColor lightGrayColor];
+    self.backgroundColor = [UIColor redColor];
+    self.indexLabel = [UILabel new];
+    self.indexLabel.font = [UIFont systemFontOfSize:14.f];
+    self.indexLabel.textColor = [UIColor blueColor];
+    self.indexLabel.numberOfLines = 1;
+    self.indexLabel.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:self.indexLabel];
+    self.backgroundColor = [UIColor lightGrayColor];
+    
    
-    }
-    return self;
 }
 
-- (void)loadViewWithData:(id)model
+- (void)loadModuleData:(id)model
 {
     self.indexLabel.text = [[NSString alloc]initWithFormat:@"Module %@",@(self.moduleIndex)];
+    self.backgroundColor = [UIColor lightGrayColor];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+          [self.blackBoard setValue:@(1) forKey:@"hello_world"];
+    });
+  
 }
 
-- (void)layoutViewWithWidth:(CGFloat)viewWidth
+- (void)layoutModuleWidth:(CGFloat)viewWidth
 {
     self.frame = CGRectMake(0, 0, viewWidth, 100.0);
     [self.indexLabel sizeToFit];

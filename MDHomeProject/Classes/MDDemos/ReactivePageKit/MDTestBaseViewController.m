@@ -27,14 +27,14 @@
     XYBaseModuleModel *model = [XYBaseModuleModel new];
     model.title = @"hello";
     self.model = model;
-    
-    [[self.blackBoard addObserver:self forKey:@"hello123"] subscribeNext:^(id  _Nullable x) {
-         NSLog(@"------->%@",x);
-    }];
-    
-    [[self.blackBoard addObserver:self forKey:@"hello"] subscribeNext:^(id  _Nullable x) {
-         NSLog(@"------->%@",x);
-    }];
+//    
+//    [[self.blackBoard addObserver:self forKey:@"hello123"] subscribeNext:^(id  _Nullable x) {
+//         NSLog(@"------->%@",x);
+//    }];
+//    
+//    [[self.blackBoard addObserver:self forKey:@"hello"] subscribeNext:^(id  _Nullable x) {
+//         NSLog(@"------->%@",x);
+//    }];
     
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

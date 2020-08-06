@@ -40,7 +40,7 @@
 
     
     //
-    self.url = [NSURL URLWithString:@"https://www.baidu.com"];
+    self.url = [NSURL URLWithString:@"https://funclub.music.163.com/funclub/homeowners/list?full_screen=true"];
     [self initWebView];
     
    
