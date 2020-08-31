@@ -27,6 +27,8 @@
 - (void)loadModuleData:(id)model
 {
     self.indexLabel.text = [[NSString alloc]initWithFormat:@"Module %@",@(self.moduleIndex)];
+    NSString *description = @keypath(self, description);
+    
     [[self.blackBoard signalForKey:@"hello_world"] subscribeNext:^(id  _Nullable x) {
          
           NSLog(@"--------------->%@",x);

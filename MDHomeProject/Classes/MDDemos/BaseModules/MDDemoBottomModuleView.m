@@ -29,6 +29,7 @@
     [[self.blackBoard signalForKey:@"hello_world"] subscribeNext:^(id  _Nullable x) {
        
         NSLog(@"--------------->%@",x);
+        
     }];
     
     

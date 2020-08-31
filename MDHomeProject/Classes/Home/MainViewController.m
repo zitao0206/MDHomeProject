@@ -36,10 +36,16 @@
     return YES;
 }
 
+- (void)injected
+{
+    NSLog(@"I've been injected: %@", self);
+//    self.view.backgroundColor = [UIColor redColor];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView = [[UITableView  alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    self.tableView = [[UITableView  alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 200) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor clearColor];

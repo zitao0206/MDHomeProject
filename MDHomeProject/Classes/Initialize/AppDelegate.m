@@ -77,6 +77,10 @@ typedef NS_ENUM(NSInteger, LaunchMode) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    #if DEBUG
+           [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
+       #endif
+    
     self.launchMode = [self launchModeForLaunchOptions:launchOptions];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -98,6 +102,8 @@ typedef NS_ENUM(NSInteger, LaunchMode) {
 //        [XYFelix evalString:js_string];
 //        NSLog(@"hotfix....%@",js_string);
     }
+   
+    
     return YES;
 }
 
